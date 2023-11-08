@@ -1,12 +1,13 @@
 ---
-title: Docker container driver
+title: Docker container build driver
+description: The Docker container driver runs BuildKit in a container image.
 keywords: build, buildx, driver, builder, docker-container
 aliases:
-- /build/buildx/drivers/docker-container/
-- /build/building/drivers/docker-container/
+  - /build/buildx/drivers/docker-container/
+  - /build/building/drivers/docker-container/
 ---
 
-The buildx Docker container driver allows creation of a managed and customizable
+The Docker container driver allows creation of a managed and customizable
 BuildKit environment in a dedicated Docker container.
 
 Using the Docker container driver has a couple of advantages over the default
@@ -33,7 +34,7 @@ The following table describes the available driver-specific options that you can
 pass to `--driver-opt`:
 
 | Parameter       | Type   | Default          | Description                                                                                |
-|-----------------|--------|------------------|--------------------------------------------------------------------------------------------|
+| --------------- | ------ | ---------------- | ------------------------------------------------------------------------------------------ |
 | `image`         | String |                  | Sets the image to use for running BuildKit.                                                |
 | `network`       | String |                  | Sets the network mode for running the BuildKit container.                                  |
 | `cgroup-parent` | String | `/docker/buildx` | Sets the cgroup parent of the BuildKit container if Docker is using the `cgroupfs` driver. |
@@ -134,11 +135,10 @@ $ docker buildx build \
   --push .
 ```
 
-> **Warning**
+> **Note**
 >
-> QEMU performs full-system emulation of non-native platforms, which is much
-> slower than native builds. Compute-heavy tasks like compilation and
-> compression/decompression will likely take a large performance hit.
+> Emulation with QEMU can be much slower than native builds, especially for
+> compute-heavy tasks like compilation and compression or decompression.
 
 ## Custom network
 
@@ -171,12 +171,10 @@ $ docker buildx inspect --bootstrap
 [Inspect the builder container](../../engine/reference/commandline/inspect.md)
 and see what network is being used:
 
-
 ```console
 $ docker inspect buildx_buildkit_mybuilder0 --format={{.NetworkSettings.Networks}}
 map[foonet:0xc00018c0c0]
 ```
-
 
 ## Further reading
 

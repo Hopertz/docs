@@ -40,9 +40,9 @@
 >
 > If your IdP setup requires an Entity ID and the ACS URL, you must select the
 > **SAML** tab in the **Authentication Method** section. For example, if your
-> Azure AD Open ID Connect (OIDC) setup uses SAML configuration within Azure
-> AD, you must select **SAML**. If you are [configuring Open ID Connect with Azure AD](https://docs.microsoft.com/en-us/powerapps/maker/portals/configure/configure-openid-settings) select
-> **Azure AD** as the authentication method. Also, IdP initiated connections
+> Entra ID (formerly Azure AD) Open ID Connect (OIDC) setup uses SAML configuration within Azure
+> AD, you must select **SAML**. If you are [configuring Open ID Connect with Entra ID (formerly Azure AD)](https://docs.microsoft.com/en-us/powerapps/maker/portals/configure/configure-openid-settings) select
+> **Azure AD (OIDC)** as the authentication method. Also, IdP initiated connections
 > aren't supported at this time.
 { .important}
 
@@ -56,7 +56,7 @@ After your domain is verified, create an SSO connection.
    >
    > You have to verify at least one domain before creating the connections.
 
-4. Select an authentication method, **SAML** or **Azure AD (OIDC)**.
+4. Select an authentication method, **SAML** or **Azure AD (OIDC)**. See [More resources](#more-resources) for a video overview on how to set up SSO with SAML in Entra ID (formerly Azure AD).
 5. Copy the following fields and add them to your IdP:
 
    - SAML: **Entity ID**, **ACS URL**
@@ -84,12 +84,12 @@ After you’ve completed the SSO configuration process in Docker, you can test t
 
 >**Important**
 >
-> SSO has Just-In-Time (JIT) Provisioning enabled by default. This means your users are auto-provisioned into a team called 'Company' within your organization on Docker Hub.
+> SSO has Just-In-Time (JIT) Provisioning enabled by default. This means your users are auto-provisioned to your organization on Docker Hub.
 >
 > You can change this on a per-app basis. To prevent auto-provisioning users, you can create a security group in your IdP and configure the SSO app to authenticate and authorize only those users that are in the security group. Follow the instructions provided by your IdP:
 >
 > - [Okta](https://help.okta.com/en-us/Content/Topics/Security/policies/configure-app-signon-policies.htm)
-> - [AzureAD](https://learn.microsoft.com/en-us/azure/active-directory/develop/howto-restrict-your-app-to-a-set-of-users)
+> - [Entra ID (formerly Azure AD)](https://learn.microsoft.com/en-us/azure/active-directory/develop/howto-restrict-your-app-to-a-set-of-users)
 { .important}
 
 The SSO connection is now created. You can continue to set up SCIM without enforcing SSO log-in. For more information about setting up SCIM, see {{ $scim_link }}.
@@ -111,6 +111,12 @@ Your users must now sign in to Docker with SSO.
 >
 > If SSO isn't enforced, users can choose to sign in with either their Docker ID or SSO.
 { .important}
+
+## More resources
+
+The following video provides an overview of configuring SSO with SAML in Entra ID (formerly Azure AD).
+
+<iframe title="Configure SSO with SAML in Entra ID overview" class="border-0 w-full aspect-video mb-8" allow="fullscreen" src="https://www.loom.com/embed/0a30409381f340cfb01790adbd9aa9b3?sid=7e4e10a7-7f53-437d-b593-8a4886775632"></iframe>
 
 ## What's next?
 

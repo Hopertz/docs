@@ -87,7 +87,7 @@ daemon. The Docker client and daemon communicate using a REST API, over UNIX
 sockets or a network interface. Another Docker client is Docker Compose,
 that lets you work with applications consisting of a set of containers.
 
-![Docker Architecture diagram](/assets/images/architecture.svg)
+![Docker Architecture diagram](images/docker-architecture.png)
 
 ### The Docker daemon
 
@@ -109,7 +109,7 @@ Docker Desktop is an easy-to-install application for your Mac, Windows or Linux 
 ### Docker registries
 
 A Docker registry stores Docker images. Docker Hub is a public
-registry that anyone can use, and Docker is looks for images on
+registry that anyone can use, and Docker looks for images on
 Docker Hub by default. You can even run your own private registry.
 
 When you use the `docker pull` or `docker run` commands, Docker pulls the required images from your configured registry. When you use the `docker push` command, Docker pushes
@@ -124,7 +124,7 @@ of those objects.
 #### Images
 
 An image is a read-only template with instructions for creating a Docker
-container. Often, an image is_based on another image, with some additional
+container. Often, an image is based on another image, with some additional
 customization. For example, you may build an image which is based on the `ubuntu`
 image, but installs the Apache web server and your application, as well as the
 configuration details needed to make your application run.

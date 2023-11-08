@@ -20,7 +20,7 @@ detailed instructions on converting an existing user account to an organization,
 
 To create an organization:
 
-1. Sign in to [Docker Hub](https://hub.docker.com/) using your [Docker ID](../docker-id/index.md) or your email address.
+1. Sign in to [Docker Hub](https://hub.docker.com/) using your [Docker ID](../docker-id/index.md), your email address, or your social provider.
 2. Select **Organizations** and then **Create Organization** to create a new
    organization.
 3. Choose a plan for your organization and select **Buy Now**. See
@@ -46,6 +46,12 @@ public images you publish. You can update the company name anytime by navigating
 to your organization's **Settings** page.
 6. Select **Continue to Org size** and then specify the number of users (seats)
 you require.
+
+   > **Early access features**
+   >
+   > If you buy a subscription for Docker Team or Business after October 23, 2023, you may have a different user interface experience. Select **Purchase** to continue to the billing portal. Here you can select the quantity of seats for your organization. Then, follow the on-screen instructions to pay for your subscription. You can disregard steps 7 and 8.
+   { .restricted }
+
 7. Select **Continue to payment**.
 8. Follow the on-screen instructions to pay for your subscription.
 
@@ -108,6 +114,11 @@ configure your organization.
 - **Billing**: Displays information about your existing
 [Docker subscription (plan)](../subscription/index.md) and your billing history.
 You can also access your invoices from this tab.
+
+> **Early access features**
+>
+> If you subscribed to Docker Team or Business after October 23, 2023, you may have a different user interface experience. To access invoices and payment information, go to the **Billing** page, then select the **Payment methods and billing history** link.
+{ .restricted }
 
 ## Videos
 

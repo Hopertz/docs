@@ -1,11 +1,14 @@
 {{ $product_name := "Docker Hub" }}
 {{ $sso_config_link := "[configuring SSO](/single-sign-on/configure/)" }}
+{{ $role_mapping_link := "[Set up role mapping](docker-hub/scim.md#set-up-role-mapping)" }}
 
 {{ if eq (.Get "product") "admin" }}
 {{ $product_name = "Docker Admin" }}
 {{ $sso_config_link = "[configuring SSO](/admin/organization/security-settings/sso-configuration/)" }}
+{{ $role_mapping_link = "[Set up role mapping](admin/organization/security-settings/scim.md#set-up-role-mapping)" }}
 {{ if eq (.Get "layer") "company" }}
 {{ $sso_config_link = "[configuring SSO](/admin/company/settings/sso-configuration/)" }}
+{{ $role_mapping_link = "[Set up role mapping](admin/company/settings/scim.md#set-up-role-mapping)" }}
 {{ end }}
 {{ end }}
 
@@ -17,7 +20,7 @@ When SSO is enabled, users are redirected to your IdP's authentication page to s
 
 The following diagram shows how SSO operates and is managed in Docker Hub and Docker Desktop. In addition, it provides information on how to authenticate between your IdP.
 
-![SSO architecture](/single-sign-on/images/sso-architecture.png)
+![SSO architecture](/single-sign-on/images/SSO.png)
 
 ## How to set it up
 
@@ -25,7 +28,7 @@ Before enabling SSO in Docker, administrators must first configure their IdP to 
 
 After establishing the connection between the IdP server and Docker, administrators sign in to {{ $product_name }} and complete the SSO enablement process.
 
-When you enable SSO for your company, a first-time user can sign in to Docker Hub using their company's domain email address. They're then added to your company and assigned to the company team in the organization.
+When you enable SSO for your company, a first-time user can sign in to Docker Hub using their company's domain email address. They're then added to your company, assigned to an organization, and optionally assigned to a team.
 
 Administrators can then choose to enforce SSO login and effortlessly manage SSO connections for their individual company.
 
@@ -37,13 +40,18 @@ When a user signs in using SSO, Docker obtains the following attributes from the
 - **Full name** - name of the user
 - **Groups (optional)** - list of groups to which the user belongs
 
-If you use SAML for your SSO connection, Docker obtains these attributes from the SAML assertion message. Your IdP may use different naming for SAML attributes than those listed above. The following table lists the possible SAML attributes that can be present in order for your SSO connection to work.
+If you use SAML for your SSO connection, Docker obtains these attributes from the SAML assertion message. Your IdP may use different naming for SAML attributes than those listed above. The following table lists the possible SAML attributes that can be present in order for your SSO connection to work. 
+
+You can also configure attributes to override default values, such as default team or organization. See {{ $role_mapping_link }}.
 
 | SSO attribute | SAML assertion message attributes |
 | ---------------- | ------------------------- |
 | Email address    | `"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"`, `"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn"`, `"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress"`, `email`                           |
 | Full name        | `"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"`, `name`, `"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname"`, `"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname"`  |
 | Groups (optional) | `"http://schemas.xmlsoap.org/claims/Group"`, `"http://schemas.microsoft.com/ws/2008/06/identity/claims/groups"`, `Groups`, `groups` |
+| Docker Org (optional)        | `dockerOrg`   |
+| Docker Team (optional)     | `dockerTeam`  |
+| Docker Role (optional)      | `dockerRole`  |
 
 > **Important**
 >

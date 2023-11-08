@@ -48,7 +48,7 @@ This includes:
 
 - The resources in the [Learning Center](../use-desktop/index.md)
 - Pulling or pushing an image to Docker Hub
-- [Image Access Management](../../docker-hub/image-access-management.md)
+- [Image Access Management](../../security/for-developers/access-tokens.md)
 - [Vulnerability scanning](../../docker-hub/vulnerability-scanning.md)
 - Viewing remote images in the Docker Dashboard
 - Setting up [Dev Environments](../dev-environments/index.md)
@@ -69,7 +69,7 @@ You can find information about diagnosing and troubleshooting common issues in t
 
 If you do not find a solution in troubleshooting, browse the Github repositories or create a new issue:
 
-- [docker/for-mac](https://github.com/docker/for-mac/issues) 
+- [docker/for-mac](https://github.com/docker/for-mac/issues)
 - [docker/for-win](https://github.com/docker/for-win/issues)
 - [docker/for-linux](https://github.com/docker/for-linux/issues)
 
@@ -126,4 +126,4 @@ After updating the `settings.json` file, close and restart Docker Desktop to app
 
 ### Can I run Docker Desktop on Virtualized hardware?
 
-No, currently this is unsupported and against terms of use.
+Yes, see section [Run Docker Desktop for Windows in a VM or VDI environment](../vm-vdi.md) for more information on how to do this.

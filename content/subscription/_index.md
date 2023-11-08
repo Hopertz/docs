@@ -1,17 +1,17 @@
 ---
-description: Docker subscription overview
+description: Learn about subscription features and how to manage your subscription
 keywords: Docker, pricing, billing, Pro, Team, business, subscription, tier, plan
 title: Docker subscription overview
 grid:
 - title: Understand Docker subscriptions and features
   link: /subscription/details/
-  icon: shop_two
+  icon: feature_search
 - title: Upgrade your subscription
   link: /subscription/upgrade/
   icon: upgrade
 - title: Add more seats to your subscription
   link: /subscription/add-seats/
-  icon: contact_page
+  icon: group_add
 - title: Explore common FAQs
   link: /subscription/faq/
   icon: help

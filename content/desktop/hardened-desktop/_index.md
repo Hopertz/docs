@@ -7,7 +7,7 @@ keywords: security, hardened desktop, enhanced container isolation, registry acc
 grid:
   - title: "Settings Management"
     description: Learn how Settings Management can secure your developers' workflows.
-    icon: "lock"
+    icon: shield_locked
     link: "/desktop/hardened-desktop/settings-management/"
   - title: "Enhanced Container Isolation"
     description: Understand how Enhanced Container Isolation can prevent container attacks.
@@ -16,11 +16,11 @@ grid:
   - title: "Registry Access Management"
     description: Control the registries developers can access while using Docker Desktop.
     icon: "home_storage"
-    link: "/desktop/hardened-desktop/registry-access-management/"
+    link: "/security/for-admins/registry-access-management/"
   - title: "Image Access Management"
     description: Control the images developers can pull from Docker Hub.
     icon: "photo_library"
-    link: "/docker-hub/image-access-management/"
+    link: "/security/for-admins/image-access-management/"
 ---
 
 >Note
@@ -40,7 +40,5 @@ Hardened Docker Desktop includes:
 - Image Access Management, which gives admins control over which images developers can pull from Docker Hub.
 
 The features of Hardened Docker Desktop operate independently of each other. When used together, these mechanisms defend against attacks at different functional layers of the developer workflow, providing a defense-in-depth approach to securing developer environments.
-
-Docker plans to continue adding more security enhancements to the Hardened Docker Desktop security model.
 
 {{< grid >}}
